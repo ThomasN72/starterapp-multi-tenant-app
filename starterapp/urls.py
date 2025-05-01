@@ -4,12 +4,12 @@ from tenant_app.api import api as tenant_api
 from django.views import defaults as default_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', tenant_api.urls),
-] 
+    path("admin/", admin.site.urls),
+    path("api/<slug:region>/", tenant_api.urls),
+]
 
 # Define error handlers
 handler400 = default_views.bad_request
 handler403 = default_views.permission_denied
 handler404 = default_views.page_not_found
-handler500 = default_views.server_error 
+handler500 = default_views.server_error
