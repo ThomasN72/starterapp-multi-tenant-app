@@ -18,7 +18,6 @@ class Member(TenantModel):
     phone = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    # region = models.ForeignKey(Region, on_delete=models.CASCADE)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
 
     class Meta:
